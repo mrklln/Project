@@ -1,0 +1,36 @@
+.logo{
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-link{
+    display:block;
+    color:white;
+    text-decoration:none;
+    margin-bottom:10px;
+}
+
+.footer-link:hover{
+    color:#2154a0;
+}
+
+.account-container{
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    border: 2px solid #000;
+    box-shadow: 30px 40px 30px rgba(0,0,0,0.15);
+}
+.social-link{
+    display:inline-block;
+    color:white;
+    text-decoration:none;
+    transition:all 0.3s ease;
+}
+.social-link:hover{
+    color:#0d6efd;
+    transform:translateX(5px);
+}

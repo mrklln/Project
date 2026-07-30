@@ -1,0 +1,107 @@
+.logo{
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-link{
+    display:block;
+    color:white;
+    text-decoration:none;
+    margin-bottom:10px;
+}
+
+.footer-link:hover{
+    color:#2154a0;
+}
+
+.account-container{
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    border: 2px solid #000;
+    box-shadow: 30px 40px 30px rgba(0,0,0,0.15);
+}
+.social-link{
+    display:inline-block;
+    color:white;
+    text-decoration:none;
+    transition:all 0.3s ease;
+}
+.social-link:hover{
+    color:#0d6efd;
+    transform:translateX(5px);
+}
+
+/* Page Title */
+.settings-title{
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+/* Cards */
+.settings-card{
+    border: 1px solid #dee2e6;
+    border-radius: 15px;
+    box-shadow: 10px 4px 12px rgba(0,0,0,0.5);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.settings-card:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Card Header */
+.settings-card .card-header{
+    background: #212529;
+    color: white;
+    font-weight: 600;
+    padding: 1rem;
+}
+
+/* Card Body */
+.settings-card .card-body{
+    padding: 1.5rem;
+}
+
+/* Inputs */
+.settings-card .form-control{
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.settings-card .form-control:focus{
+    box-shadow: 0 0 0 0.2rem rgba(13,110,253,.25);
+}
+
+/* Buttons */
+.btn-save{
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: 600;
+}
+
+.btn-password{
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: 600;
+}
+
+.btn-logout{
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+    .settings-card .card-body{
+        padding: 1rem;
+    }
+
+}

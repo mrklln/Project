@@ -1,0 +1,58 @@
+.logo{
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+}
+
+.aboutlogo{
+    width: 100%;
+    max-width: 550px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    border: 2px solid rgba(255,255,255,.1);
+}
+
+.aboutlogo{
+    border-radius: 15px;
+    transition: transform 0.4s ease, box-shadow 5s ease;
+}
+
+.aboutlogo:hover{
+    transform: scale(1.02);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+.mission.vision{
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.mission:hover{
+    transform: scale(1.02);
+}
+
+.vision:hover{
+    transform: scale(1.02);
+}
+
+.values:hover {
+    transform: scale(1.02);
+}
+
+.footer-link{
+    display:block;
+    color:white;
+    text-decoration:none;
+    margin-bottom:10px;
+}
+
+.footer-link:hover{
+    color:#2154a0;
+}
+.social-link{
+    display:inline-block;
+    color:white;
+    text-decoration:none;
+    transition:all 0.3s ease;
+}
+.social-link:hover{
+    color:#0d6efd;
+    transform:translateX(5px);
+}

@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pcparts.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="/Project/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <title>PC Parts</title>
+</head>
+<body>
+    <!-- navbar -->
+    <div class="container-fluid bg-dark text-light p-3 mb-3" style="width: 100%;">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+
+                <!-- logo -->
+                <img src="logo.png" class="logo" alt="ZenTech Logo">
+                <a href="/Project/homepage/main.html" class="text-decoration-none text-light">
+                    <h3 class="mb-0">ZenTech PC Parts</h3>
+                </a>
+            </div>
+            <!-- search bar -->
+            <form class="d-none d-md-flex" role="search" style="width: 50%;">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                <button class="btn btn-outline-light text-light" type="submit">Search</button>
+            </form>
+
+            <div class="d-flex align-items-center gap-3">
+                <a href="/Project/cart/cart.html" class="bg-dark text-light d-none d-md-block" title="Cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                    </svg>
+                </a>
+                 <!-- login -->
+                <a href="/Project/login/login.html" id="accountBtn" class="bg-dark text-light d-none d-md-block text-decoration-none gap-2 fw-bold" title="Login">
+                    <span id="accountIcon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                        </svg>
+                    </span>
+                    <span id="accountText">Login</span>
+                </a>
+
+                <!-- burger button -->
+                <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                    </svg>
+                </button>
+
+                <!-- offcanvas -->
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header bg-dark text-light">
+                        <h5 class="offcanvas-title" id="offcanvasRightLabel">Menu</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <!-- user welcome -->
+                        <div id="userSection" class="mb-1 d-none">
+                            <div class="p-3 bg-light rounded">
+                                <h5 class="mb-1">Welcome back!</h5>
+                                <p class="mb-0 fw-bold fs-5" id="userName"></p>
+                            </div>
+                        </div>
+
+                        <!-- search bar -->
+                        <form class="d-flex w-100 mb-4" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                            <button class="btn btn-dark" type="submit">Search</button>
+                        </form>
+
+                        <!-- login on offcanvas -->
+                        <a href="/Project/login/login.html" id="mobileAccountBtn" class="d-flex align-items-center mb-4 d-md-none text-dark text-decoration-none fw-bold fs-5" title="Login">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-person-fill me-1" viewBox="0 0 16 16">
+                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                            </svg>
+                            <span id="mobileAccountText">Login</span>
+                        </a>
+
+                        <!-- cart -->
+                        <a href="/Project/cart/cart.html" class="d-flex align-items-center mb-4 d-md-none text-dark text-decoration-none fw-bold fs-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart-fill me-1" viewBox="0 0 16 16">
+                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                            </svg>
+                            <span>Cart</span>
+                        </a>
+                        <!-- homepage -->
+                        <a href="/Project/homepage/main.html" class="d-flex align-items-center mb-4 text-dark text-decoration-none fw-bold fs-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-house-door-fill me-1" viewBox="0 0 16 16">
+                                <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"/>
+                            </svg>
+                            <span>Home</span>
+                        </a>
+                        <!-- pc parts -->
+                        <a href="pcparts.html" class="d-flex align-items-center mb-4 text-dark text-decoration-none fw-bold fs-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-cpu-fill me-1" viewBox="0 0 16 16">
+                                <path d="M6.5 6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5z"/>
+                                <path d="M5.5.5a.5.5 0 0 0-1 0V2A2.5 2.5 0 0 0 2 4.5H.5a.5.5 0 0 0 0 1H2v1H.5a.5.5 0 0 0 0 1H2v1H.5a.5.5 0 0 0 0 1H2v1H.5a.5.5 0 0 0 0 1H2A2.5 2.5 0 0 0 4.5 14v1.5a.5.5 0 0 0 1 0V14h1v1.5a.5.5 0 0 0 1 0V14h1v1.5a.5.5 0 0 0 1 0V14h1v1.5a.5.5 0 0 0 1 0V14a2.5 2.5 0 0 0 2.5-2.5h1.5a.5.5 0 0 0 0-1H14v-1h1.5a.5.5 0 0 0 0-1H14v-1h1.5a.5.5 0 0 0 0-1H14v-1h1.5a.5.5 0 0 0 0-1H14A2.5 2.5 0 0 0 11.5 2V.5a.5.5 0 0 0-1 0V2h-1V.5a.5.5 0 0 0-1 0V2h-1V.5a.5.5 0 0 0-1 0V2h-1zm1 4.5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3A1.5 1.5 0 0 1 6.5 5"/>
+                            </svg>
+                            <span>PC Parts</span>
+                        </a>
+                        <!-- monitors -->
+                        <a href="/Project/Categories/Monitor/monitor.html" class="d-flex align-items-center mb-4 text-dark text-decoration-none fw-bold fs-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-display-fill me-1" viewBox="0 0 16 16">
+                                <path d="M6 12q0 1-.25 1.5H5a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1h-.75Q10 13 10 12h4c2 0 2-2 2-2V4c0-2-2-2-2-2H2C0 2 0 4 0 4v6c0 2 2 2 2 2z"/>
+                            </svg>
+                            <span>Monitors</span>
+                        </a>
+                        <!-- peripherals -->
+                        <a href="/Project/Categories/Peripherals/peripherals.html" class="d-flex align-items-center mb-4 text-dark text-decoration-none fw-bold fs-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-controller me-1" viewBox="0 0 16 16">
+                                <path d="M11.5 6.027a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m-1.5 1.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1m2.5-.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m-1.5 1.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1m-6.5-3h1v1h1v1h-1v1h-1v-1h-1v-1h1z"/>
+                                <path d="M3.051 3.26a.5.5 0 0 1 .354-.613l1.932-.518a.5.5 0 0 1 .62.39c.655-.079 1.35-.117 2.043-.117.72 0 1.443.041 2.12.126a.5.5 0 0 1 .622-.399l1.932.518a.5.5 0 0 1 .306.729q.211.136.373.297c.408.408.78 1.05 1.095 1.772.32.733.599 1.591.805 2.466s.34 1.78.364 2.606c.024.816-.059 1.602-.328 2.21a1.42 1.42 0 0 1-1.445.83c-.636-.067-1.115-.394-1.513-.773-.245-.232-.496-.526-.739-.808-.126-.148-.25-.292-.368-.423-.728-.804-1.597-1.527-3.224-1.527s-2.496.723-3.224 1.527c-.119.131-.242.275-.368.423-.243.282-.494.575-.739.808-.398.38-.877.706-1.513.773a1.42 1.42 0 0 1-1.445-.83c-.27-.608-.352-1.395-.329-2.21.024-.826.16-1.73.365-2.606.206-.875.486-1.733.805-2.466.315-.722.687-1.364 1.094-1.772a2.3 2.3 0 0 1 .433-.335l-.028-.079zm2.036.412c-.877.185-1.469.443-1.733.708-.276.276-.587.783-.885 1.465a14 14 0 0 0-.748 2.295 12.4 12.4 0 0 0-.339 2.406c-.022.755.062 1.368.243 1.776a.42.42 0 0 0 .426.24c.327-.034.61-.199.929-.502.212-.202.4-.423.615-.674.133-.156.276-.323.44-.504C4.861 9.969 5.978 9.027 8 9.027s3.139.942 3.965 1.855c.164.181.307.348.44.504.214.251.403.472.615.674.318.303.601.468.929.503a.42.42 0 0 0 .426-.241c.18-.408.265-1.02.243-1.776a12.4 12.4 0 0 0-.339-2.406 14 14 0 0 0-.748-2.295c-.298-.682-.61-1.19-.885-1.465-.264-.265-.856-.523-1.733-.708-.85-.179-1.877-.27-2.913-.27s-2.063.091-2.913.27"/>
+                            </svg>
+                            <span>Peripherals</span>
+                        </a>
+                        <!-- about -->
+                        <a href="/Project/about/about.html" class="d-flex align-items-center mb-4 text-dark text-decoration-none fw-bold fs-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-people-fill me-1" viewBox="0 0 16 16">
+                                <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
+                            </svg>
+                            <span>About Us</span>
+                        </a>
+                        <!-- contact -->
+                        <a href="/Project/contact/contact.html" class="d-flex align-items-center mb-4 text-dark text-decoration-none fw-bold fs-5">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-person-circle me-1" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                            </svg>
+                            <span>Contact Us</span>
+                        </a>
+                        <!-- logout button -->
+                        <a href="#" onclick="logout()" class="d-block text-dark text-decoration-none fw-bold fs-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-door-closed-fill" viewBox="0 0 16 16">
+                                <path d="M12 1a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2a1 1 0 0 1 1-1zm-2 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                            </svg>
+                            <span>Logout</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- header -->
+    <div class="container py-4">
+        <h2 class="page-title">PC Components</h2>
+        <p class="text-subtitle">
+            Browse our collection of gaming components.
+        </p>
+    </div>
+    <!-- breadcrumb -->
+    <div class="container py-3">
+        <p id="breadcrumb"></p>
+    </div>
+    <!-- filter section -->
+    <div class="container mb-4">
+        <div class="filter-section">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <!-- search -->
+                    <input type="text" id="searchInput" class="form-control" placeholder="Search Parts">
+                </div>
+                <!-- parts classification -->
+                <div class="col-md-3">
+                    <select id="brandFilter" class="form-select">
+                        <option value="all">All Products</option>
+                        <option value="CPU">CPU</option>
+                        <option value="Motherboard">Motherboard</option>
+                        <option value="RAM">RAM</option>
+                        <option value="GPU">GPU</option>
+                        <option value="SSD">SSD</option>
+                        <option value="CASE">CASE</option>
+                    </select>
+                </div>
+
+                <!-- sorting -->
+                <div class="col-md-3">
+                    <select id="sortFilter" class="form-select">
+                        <option value="default">Sort By</option>
+                        <option value="low">Lowest Price</option>
+                        <option value="high">Highest Price</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- products list -->
+    <div class="container-md py-5">
+        <h2 class="mb-4">PC Parts</h2>
+        <div class="row g-4" id="productRow">
+            <div class="col-md-4 product-item" data-brand="GPU" data-price="274350">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/GPU/5090.jpg" class="card-img-top" alt="Nvidia GPU">
+
+                    <div class="card-body">
+                        <h5 class="product-name">
+                                ASUS ROG Astral GeForce RTX 5090 OC
+                        </h5>
+                        <p class="product-specs">
+                            32GB GDDR7 • PCIe 5.0 • DLSS 4 • Flagship 4K Gaming
+                        </p>
+                        <h6 class="product-price">
+                            ₱274,350.00
+                        </h6>
+                        <a href="/Project/prduct-details/product-details.html?id=asus5090&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="GPU" data-price="57350">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/GPU/9070xt.jpg" class="card-img-top" alt="AMD GPU">
+
+                    <div class="card-body">
+                        <h5 class="product-name">
+                            Sapphire Nitro+ Radeon RX 9070 XT
+                        </h5>
+
+                        <p class="product-specs">
+                            16GB GDDR6 • RDNA 4 • High-End 1440p/4K Gaming
+                        </p>
+
+                        <h6 class="product-price">
+                            ₱57,350.00
+                        </h6>
+
+                        <a href="/Project/prduct-details/product-details.html?id=sapphire9070xt&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="CPU" data-price="45650">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/CPU/r9-9950x3d.jpg" class="card-img-top" alt="AMD CPU">
+
+                    <div class="card-body">
+                        <h5 class="product-name">
+                            AMD Ryzen™ 9 9950X3D
+                        </h5>
+
+                        <p class="product-specs">
+                            16-Core • 32 Thread • 5.7 GHz Boost • 3D V-Cache
+                        </p>
+
+                        <h6 class="product-price">
+                            ₱45,650.00
+                        </h6>
+
+                        <a href="/Project/prduct-details/product-details.html?id=r9-9950x3d&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="CPU" data-price="35495">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/CPU/i9-13thgen.jpg" class="card-img-top" alt="Intel CPU">
+
+                    <div class="card-body">
+                        <h5 class="product-name">
+                            Intel® Core™ i9-13900K Unlocked
+                        </h5>
+                        <p class="product-specs">
+                            13TH Gen 3.0GHZ 24-CORE LGA 1700 Processor (BX8071513900K)
+                        </p>
+                        <h6 class="product-price">
+                            ₱35,495.00
+                        </h6>
+                        <a href="/Project/prduct-details/product-details.html?id=i9-13th&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="CASE" data-price="23095">
+
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/Case/Hyperion.jpg" class="card-img-top" alt="ROG Case">
+                    <div class="card-body">
+                        <h5 class="product-name">
+                            Asus ROG Hyperion GR701 Full-Tower PC Gaming Case
+                        </h5>
+                        <p class="product-specs">
+                            Full Tower ATX • Dual 420mm Radiator Support • Tempered Glass • Extreme Airflow
+                        </p>
+                        <h6 class="product-price">
+                            ₱23,095.00
+                        </h6>
+                        <a href="/Project/prduct-details/product-details.html?id=hyperion&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="CASE" data-price="4550">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/Case/MontechSkyTwo.jpg" class="card-img-top" alt="Case">
+
+                    <div class="card-body">
+                        <h5 class="product-name">
+                            Montech Sky Two Case
+                        </h5>
+
+                        <p class="product-specs">
+                            ATX Mid Tower • Tempered Glass • ARGB Fans Included • High Airflow
+                        </p>
+
+                        <h6 class="product-price">
+                            ₱4,550.00
+                        </h6>
+
+                        <a href="/Project/prduct-details/product-details.html?id=montech&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="CPU" data-price="26995">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/CPU/i7-14thgen.jpg" class="card-img-top" alt="Intel CPU">
+                    <div class="card-body">
+                        <h5 class="product-name">
+                            Intel® Core™ i7-14700K Unlocked
+                        </h5>
+                        <p class="product-specs">
+                            14th Gen 3.4Ghz 20-Core LGA 1700 Processor (BX8071514700K)
+                        </p>
+                        <h6 class="product-price">
+                            ₱26,995.00
+                        </h6>
+                        <a href="/Project/prduct-details/product-details.html?id=i7-14th&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="GPU" data-price="189650">
+                <div class="card product-card h-100">
+
+                    <img src="/Project/Categories/Pcparts/GPU/msi-5090.jpg" class="card-img-top" alt="Nvidai GPU">
+
+                    <div class="card-body">
+                        <h5 class="product-name">
+                            MSI GeForce RTX 5090 SUPRIM SOC
+                        </h5>
+
+                        <p class="product-specs">
+                            32GB GDDR7 • Extreme Cooling • Factory Overclocked
+                        </p>
+
+                        <h6 class="product-price">
+                            ₱189,650.00
+                        </h6>
+
+                        <a href="/Project/prduct-details/product-details.html?id=msi5090&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="GPU" data-price="58800">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/GPU/asus-9070xt.jpg" class="card-img-top" alt="AMD GPU">
+
+                    <div class="card-body">
+                        <h5 class="product-name">
+                            ASUS TUF Gaming Radeon RX 9070 XT OC
+                        </h5>
+
+                        <p class="product-specs">
+                            16GB GDDR6 • Triple Fan Cooling • Premium Build
+                        </p>
+
+                        <h6 class="product-price">
+                            ₱58,800.00
+                        </h6>
+
+                        <a href="/Project/prduct-details/product-details.html?id=asus9070xt&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="CPU" data-price="41250">
+                <div class="card product-card h-100">
+                    <img src="../Pcparts/CPU/i9_ultra.jpg" class="card-img-top" alt="Intel CPU">
+
+                    <div class="card-body">
+                        <h5 class="product-name">
+                            Intel® Core™ Ultra 9 Processor 285K
+                        </h5>
+
+                        <p class="product-specs">
+                            24-Core • 24-Threads • 3.7 GHz base and up to 5.7 GHz max turbo frequency
+                        </p>
+
+                        <h6 class="product-price">
+                            ₱41,250.00
+                        </h6>
+
+                        <a href="/Project/prduct-details/product-details.html?id=i9&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="CASE" data-price="8995">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/Case/Corsair-5000d.jpg" class="card-img-top" alt="Case">
+
+                    <div class="card-body">
+                        <h5 class="product-name">
+                            Corsair 5000D Airflow Case
+                        </h5>
+
+                        <p class="product-specs">
+                            ATX Mid Tower • High Airflow • Tempered Glass • Cable Management
+                        </p>
+
+                        <h6 class="product-price">
+                            ₱8,995.00
+                        </h6>
+
+                        <a href="/Project/prduct-details/product-details.html?id=corsair5000&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="CPU" data-price="22595">
+                <div class="card product-card h-100">
+
+                    <img src="/Project/Categories/Pcparts/CPU/r7-7800x3d.jpg" class="card-img-top" alt="AMD CPU">
+
+                    <div class="card-body">
+                        <h5 class="product-name">
+                            AMD Ryzen™ 7 7800X3D 
+                        </h5>
+
+                        <p class="product-specs">
+                            8-Core • 16-Thread • 5.0 GHz Boost • 3D V-Cache
+                        </p>
+
+                        <h6 class="product-price">
+                            ₱22,595.00
+                        </h6>
+
+                        <a href="/Project/prduct-details/product-details.html?id=r7-7800x3d&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="GPU" data-price="120550">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/GPU/asus-5080.jpg" class="card-img-top" alt="Nvidia GPU">
+
+                    <div class="card-body">
+                        <h5 class="product-name">
+                            ASUS ROG Strix GeForce RTX 5080 OC
+                        </h5>
+
+                        <p class="product-specs">
+                            16GB GDDR7 • DLSS 4 • High-End 4K Gaming
+                        </p>
+
+                        <h6 class="product-price">
+                            ₱120,550.00
+                        </h6>
+
+                        <a href="/Project/prduct-details/product-details.html?id=asus5080&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="CASE" data-price="5295">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/Case/Lianli.jpg" class="card-img-top" alt="Case">
+
+                    <div class="card-body">
+                        <h5 class="product-name">
+                            Lian Li Lancool 216 Case
+                        </h5>
+
+                        <p class="product-specs">
+                            ATX Mid Tower • Tempered Glass • High Airflow • 2x 160mm Fans
+                        </p>
+
+                        <h6 class="product-price">
+                            ₱5,295.00
+                        </h6>
+
+                        <a href="/Project/prduct-details/product-details.html?id=lianli216&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="GPU" data-price="76295">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/GPU/gigabyte-5070ti.jpg" class="card-img-top" alt="Nvidia GPU">
+
+                    <div class="card-body">
+                        <h5 class="product-name">
+                            Gigabyte AORUS GeForce RTX 5070 Ti Master
+                        </h5>
+
+                        <p class="product-specs">
+                            16GB GDDR7 • Triple Fan Cooling • Premium RGB
+                        </p>
+
+                        <h6 class="product-price">
+                            ₱76,295.00
+                        </h6>
+
+                        <a href="/Project/prduct-details/product-details.html?id=gigabyte5070ti&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="GPU" data-price="28895">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/GPU/msi-5060ti.jpg" class="card-img-top" alt="Nvidia GPU">
+
+                    <div class="card-body">
+                        <h5 class="product-name">
+                            MSI GeForce RTX 5060 Ti Gaming X Trio
+                        </h5>
+
+                        <p class="product-specs">
+                            16GB GDDR7 • DLSS 4 • Excellent 1440p Gaming
+                        </p>
+
+                        <h6 class="product-price">
+                            ₱28,895.00    
+                        </h6>
+
+                        <a href="/Project/prduct-details/product-details.html?id=msi5060ti&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="CPU" data-price="22750">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/CPU/r9-7900x.jpg" class="card-img-top" alt="AMD CPU">
+
+                    <div class="card-body">
+                        <h5 class="product-name">
+                            AMD Ryzen™ 9 7900X
+                        </h5>
+
+                        <p class="product-specs">
+                            12-Core • 24-Thread • 5.6 GHz Boost • 76MB Cache
+                        </p>
+
+                        <h6 class="product-price">
+                            ₱22,750.00
+                        </h6>
+
+                        <a href="/Project/prduct-details/product-details.html?id=r9-7900x&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="GPU" data-price="68995">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/GPU/sapphire-7900xtx.jpg" class="card-img-top" alt="AMD GPU">
+
+                    <div class="card-body">
+                        <h5 class="product-name">
+                            Sapphire Nitro+ Radeon RX 7900 XTX Vapor-X
+                        </h5>
+                        <p class="product-specs">
+                            24GB GDDR6 • Flagship RDNA 3 • Excellent 4K Gaming
+                        </p>
+                        <h6 class="product-price">
+                            ₱68,995.00
+                        </h6>
+                        <a href="/Project/prduct-details/product-details.html?id=sapphire7900xtx&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 product-item" data-brand="GPU" data-price="72995">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/GPU/powercolor-7900xt.jpg" class="card-img-top" alt="AMD GPU">
+                    <div class="card-body">
+                        <h5 class="product-name">
+                            PowerColor Red Devil Radeon RX 7900 XT
+                        </h5>
+                        <p class="product-specs">
+                            20GB GDDR6 • Premium Cooling • Enthusiast Gaming
+                        </p>
+                        <h6 class="product-price">
+                            ₱72,995.00
+                        </h6>
+                        <a href="/Project/prduct-details/product-details.html?id=powercolor7900xt&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="GPU" data-price="31950">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/GPU/xfx-7800xt.jpg" class="card-img-top" alt="AMD GPU">
+
+                    <div class="card-body">
+                        <h5 class="product-name">
+                            XFX Mercury Radeon RX 7800 XT Magnetic Air
+                        </h5>
+                        <p class="product-specs">
+                            16GB GDDR6 • 1440p Gaming Beast • Premium Design
+                        </p>
+                        <h6 class="product-price">
+                            ₱31,950.00
+                        </h6>
+                        <a href="/Project/prduct-details/product-details.html?id=xfx7800xt&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 product-item" data-brand="Motherboard" data-price="26950">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/Motherboard/z790-e.jpg" class="card-img-top" alt="Motherboard">
+                    <div class="card-body">
+                        <h5 class="product-name">
+                            ASUS ROG Strix Z790-E Gaming WiFi    
+                        </h5>
+
+                        <p class="product-specs">
+                            LGA1700 • Intel Z790 • DDR5 • PCIe 5.0 • WiFi 6E • ATX    
+                        </p>
+
+                        <h6 class="product-price">
+                           ₱26,950     
+                        </h6>
+
+                        <a href="/Project/prduct-details/product-details.html?id=z790-e&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="Motherboard" data-price="11995">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/Motherboard/b760.jpg" class="card-img-top" alt="Motherboard">
+                    <div class="card-body">
+                        <h5 class="product-name">
+                           Gigabyte B760 AORUS Elite AX     
+                        </h5>
+                        <p class="product-specs">
+                           LGA1700 • Intel B760 • DDR5 • PCIe 4.0 • WiFi 6 • ATX      
+                        </p>
+                        <h6 class="product-price">
+                          ₱11,995      
+                        </h6>
+                        <a href="/Project/prduct-details/product-details.html?id=b760&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="SSD" data-price="15450">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/SSD/9901tb.jpg" class="card-img-top" alt="SSD">
+                    <div class="card-body">
+                        <h5 class="product-name">
+                           Samsung 990 EVO Plus 1TB NVMe SSD     
+                        </h5>
+                        <p class="product-specs">
+                           PCIe 4.0 • M.2 2280 • Up to 7,250 MB/s Read     
+                        </p>
+                        <h6 class="product-price">
+                           ₱15,450.00    
+                        </h6>
+                        <a href="/Project/prduct-details/product-details.html?id=9901tb&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="RAM" data-price="15757">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/RAM/vengance16gb.jpg" class="card-img-top" alt="RAM">
+
+                    <div class="card-body">
+                        <h5 class="product-name">
+                           Corsair Vengeance RGB 16GB (2x8GB) DDR5-6000     
+                        </h5>
+
+                        <p class="product-specs">
+                           DDR5 • 6000MT/s • CL36 • RGB     
+                        </p>
+
+                        <h6 class="product-price">
+                           ₱15,757.00     
+                        </h6>
+
+                        <a href="/Project/prduct-details/product-details.html?id=corsair16gb&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="RAM" data-price="32950">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/RAM/trident32gb.jpg" class="card-img-top" alt="RAM">
+                    <div class="card-body">
+                        <h5 class="product-name">
+                           G.Skill Trident Z5 RGB 32GB (2x16GB) DDR5-6000     
+                        </h5>
+                        <p class="product-specs">
+                           DDR5 • 6000MT/s • CL30 • RGB     
+                        </p>
+                        <h6 class="product-price">
+                           ₱32,950.00     
+                        </h6>
+
+                        <a href="/Project/prduct-details/product-details.html?id=trident32gb&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="Motherboard" data-price="36650">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/Motherboard/x870e-e.jpg" class="card-img-top" alt="Motherboard">
+                    <div class="card-body">
+                        <h5 class="product-name">
+                           ASUS ROG Strix X870E-E Gaming WiFi     
+                        </h5>
+                        <p class="product-specs">
+                           AM5 • AMD X870E • DDR5 • PCIe 5.0 • WiFi 7 • ATX     
+                        </p>
+                        <h6 class="product-price">
+                           ₱36,650.00     
+                        </h6>
+                        <a href="/Project/prduct-details/product-details.html?id=x870e-e&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="Motherboard" data-price="13295">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/Motherboard/b650.jpg" class="card-img-top" alt="Motherboard">
+                    <div class="card-body">
+                        <h5 class="product-name">
+                           MSI MAG B650 Tomahawk WiFi     
+                        </h5>
+                        <p class="product-specs">
+                           AM5 • AMD B650 • DDR5 • PCIe 4.0 • WiFi 6E • ATX     
+                        </p>
+                        <h6 class="product-price">
+                           ₱14,295     
+                        </h6>
+                        <a href="/Project/prduct-details/product-details.html?id=b650&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="SSD" data-price="39095">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/SSD/9902tb.jpg" class="card-img-top" alt="SSD">
+                    <div class="card-body">
+                        <h5 class="product-name">
+                            Samsung 990 Pro 2TB NVMe SSD    
+                        </h5>
+                        <p class="product-specs">
+                           PCIe 4.0 • M.2 2280 • Up to 7,450 MB/s Read     
+                        </p>
+                        <h6 class="product-price">
+                           ₱39,095.00     
+                        </h6>
+                        <a href="/Project/prduct-details/product-details.html?id=9902tb&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="RAM" data-price="4890">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/RAM/fury16gb.jpg" class="card-img-top" alt="RAM">
+                    <div class="card-body">
+                        <h5 class="product-name">
+                           Kingston Fury Beast RGB 16GB (2x8GB) DDR5-5600     
+                        </h5>
+                        <p class="product-specs">
+                            DDR5 • 5600MT/s • CL36 • RGB      
+                        </p>
+                        <h6 class="product-price">
+                           ₱4,890.00     
+                        </h6>
+                        <a href="/Project/prduct-details/product-details.html?id=furybeas16gb&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="RAM" data-price="63850">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/RAM/z5neo64gb.jpg" class="card-img-top" alt="RAM">
+                    <div class="card-body">
+                        <h5 class="product-name">
+                           G.Skill Trident Z5 Neo RGB 64GB (2x32GB) DDR5-6000    
+                        </h5>
+                        <p class="product-specs">
+                           DDR5 • 6000MT/s • CL30 • AMD EXPO Ready     
+                        </p>
+                        <h6 class="product-price">
+                            ₱63,850.00     
+                        </h6>
+                        <a href="/Project/prduct-details/product-details.html?id=z5neo64gb&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="Motherboard" data-price="14950">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/Motherboard/z790.jpg" class="card-img-top" alt="Motherboard">
+                    <div class="card-body">
+                        <h5 class="product-name">
+                           MSI MAG Z790 Tomahawk WiFi     
+                        </h5>
+                        <p class="product-specs">
+                           LGA1700 • Intel Z790 • DDR5 • PCIe 5.0 • WiFi 6E • ATX     
+                        </p>
+                        <h6 class="product-price">
+                           ₱14,950.00     
+                        </h6>
+                        <a href="/Project/prduct-details/product-details.html?id=msiz790&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="Motherboard" data-price="12250">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/Motherboard/b650aorus.jpg" class="card-img-top" alt="Motherboard">
+                    <div class="card-body">
+                        <h5 class="product-name">
+                           Gigabyte B650 AORUS Elite AX     
+                        </h5>
+                        <p class="product-specs">
+                          AM5 • AMD B650 • DDR5 • PCIe 4.0 • WiFi 6E • ATX      
+                        </p>
+                        <h6 class="product-price">
+                           ₱12,250.00     
+                        </h6>
+
+                        <a href="/Project/prduct-details/product-details.html?id=gigabyteb650&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="SSD" data-price="5995">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/SSD/sn7701tb.jpg" class="card-img-top" alt="SSD">
+                    <div class="card-body">
+                        <h5 class="product-name">
+                           WD Black SN770 1TB NVMe SSD     
+                        </h5>
+                        <p class="product-specs">
+                           PCIe 4.0 • M.2 2280 • Up to 5,150 MB/s Read     
+                        </p>
+                        <h6 class="product-price">
+                           ₱5,995     
+                        </h6>
+
+                        <a href="/Project/prduct-details/product-details.html?id=sn770&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="SSD" data-price="7995">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/SSD/nv3500gb.jpg" class="card-img-top" alt="SSD">
+                    <div class="card-body">
+                        <h5 class="product-name">
+                           Kingston NV3 500GB NVMe SSD     
+                        </h5>
+                        <p class="product-specs">
+                           PCIe 4.0 • M.2 2280 • Up to 5,000 MB/s Read     
+                        </p>
+                        <h6 class="product-price">
+                           ₱7,995.00     
+                        </h6>
+                        <a href="/Project/prduct-details/product-details.html?id=nv3&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="RAM" data-price="33995">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/RAM/dominator64gb.jpg" class="card-img-top" alt="RAm">
+                    <div class="card-body">
+                        <h5 class="product-name">
+                            Corsair Dominator Titanium RGB 64GB (2x32GB) DDR5-6000    
+                        </h5>
+                        <p class="product-specs">
+                           DDR5 • 6000MT/s • CL30 • Premium RGB     
+                        </p>
+                        <h6 class="product-price">
+                           ₱33,995.00     
+                        </h6>
+                        <a href="/Project/prduct-details/product-details.html?id=dominator64gb&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 product-item" data-brand="RAM" data-price="27500">
+                <div class="card product-card h-100">
+                    <img src="/Project/Categories/Pcparts/RAM/renegade32gb.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="product-name">
+                           Kingston Fury Renegade RGB 32GB (2x16GB) DDR5-6400     
+                        </h5>
+                        <p class="product-specs">
+                           DDR5 • 6400MT/s • CL32 • RGB     
+                        </p>
+                        <h6 class="product-price">
+                           ₱27,500.00     
+                        </h6>
+                        <a href="/Project/prduct-details/product-details.html?id=renegade32gb&category=PC Parts" class="btn btn-primary btn-view">
+                            View Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- page navigation -->
+        <nav aria-label="Page navigation" class="my-5">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled" id="prevBtn">
+                    <a class="page-link" href="#" onclick="changePage(currentPage - 1); return false;">Previous</a>
+                </li>
+                <li class="page-item active" id="pageBtn1">
+                    <a class="page-link" href="#" onclick="changePage(1); return false;">1</a>
+                </li>
+                <li class="page-item" id="pageBtn2">
+                    <a class="page-link" href="#" onclick="changePage(2); return false;">2</a>
+                </li>
+                <li class="page-item" id="pageBtn3">
+                    <a class="page-link" href="#" onclick="changePage(3); return false;">3</a>
+                </li>
+                <li class="page-item" id="pageBtn4">
+                    <a class="page-link" href="#" onclick="changePage(4); return false;">4</a>
+                </li>
+                <li class="page-item" id="nextBtn">
+                    <a class="page-link" href="#" onclick="changePage(currentPage + 1); return false;">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+
+<!-- footer -->
+    <footer class="bg-dark text-light mt-5 py-5">
+        <div class="container-fluid">
+            <div class="row px-5">
+                <div class="col-md-4">
+                    <h5 class="fw-bold">CUSTOMER SERVICE</h5>
+                    <a href="#" class="footer-link">Cancellation Policy</a>
+                    <a href="#" class="footer-link">Delivery</a>
+                    <a href="#" class="footer-link">Order Verification</a>
+                    <a href="#" class="footer-link">Payment FAQs</a>
+                </div>
+
+                <div class="col-md-4">
+                    <h5 class="fw-bold">COMPANY</h5>
+                    <a href="#" class="footer-link">Careers</a>
+                    <a href="#" class="footer-link">Contact Us</a>
+                    <a href="#" class="footer-link">Reviews</a>
+                    <a href="#" class="footer-link">Store Locations</a>
+                </div>
+
+                <div class="col-md-4">
+                    <h4 class="fw-bold">ZenTech</h4>
+                    <p>Build Your Dream PC</p>
+
+                    <h5 class="md-4">Follow Us</h5>
+                    <div class="d-flex flex-column gap-2">
+                        <a href="#" class="social-link text-light text-decoration-none">📘 Facebook</a>
+                        <a href="#" class="social-link text-light text-decoration-none">📸 Instagram</a>
+                        <a href="#" class="social-link text-light text-decoration-none">▶️ Youtube</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-light">
+            <div class="text-center">
+                <small>&copy; 2026 ZenTech PC Parts | All Rights Reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/Project/bootstrap-5.3.8-dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="pcparts.js"></script>
+</body>
+</html>
