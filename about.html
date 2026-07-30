@@ -11,28 +11,30 @@
 <body>
     <!-- navbar -->
     <div class="container-fluid bg-dark text-light p-3 mb-3" style="width: 100%;">
-        <div class="-fluid-d-flex justify-content-between align-items-center">
+        <div class="d-flex justify-content-between align-items-center">
             <div class="d-flex align-items-center">
-
                 <!-- logo -->
+                 <a href="/index.html" class="text-decoration-none text-light"></a>
                 <img src="./photos/logo.png" class="logo" alt="ZenTech Logo">
-                <a href="index.html" class="text-decoration-none text-light">
-                    <h3 class="mb-0">ZenTech PC Parts</h3>
+                <h3 class="mb-0">ZenTech PC Parts</h3>
                 </a>
             </div>
             <!-- search bar -->
-            <form class="d-none d-md-flex" role="search" style="width: 50%;">
+                 <form class="d-none d-md-flex" role="search" style="width: 50%;">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
                 <button class="btn btn-outline-light text-light" type="submit">Search</button>
             </form>
 
             <div class="d-flex align-items-center gap-3">
-                <a href="cart.html" class="bg-dark text-light d-none d-md-block" title="Cart">
+
+                <!-- cart -->
+                <a href="#" id="cartBtn" class="bg-dark text-light d-none d-md-block" title="Cart">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
                         <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
                     </svg>
                 </a>
-                 <!-- login -->
+
+                <!-- login -->
                 <a href="login.html" id="accountBtn" class="bg-dark text-light d-none d-md-block text-decoration-none gap-2 fw-bold" title="Login">
                     <span id="accountIcon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
@@ -63,13 +65,11 @@
                                 <p class="mb-0 fw-bold fs-5" id="userName"></p>
                             </div>
                         </div>
-
                         <!-- search bar -->
                         <form class="d-flex w-100 mb-4" role="search">
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
                             <button class="btn btn-dark" type="submit">Search</button>
                         </form>
-
                         <!-- login on offcanvas -->
                         <a href="login.html" id="mobileAccountBtn" class="d-flex align-items-center mb-4 d-md-none text-dark text-decoration-none fw-bold fs-5" title="Login">
                             <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-person-fill me-1" viewBox="0 0 16 16">
@@ -77,15 +77,14 @@
                             </svg>
                             <span id="mobileAccountText">Login</span>
                         </a>
-
                         <!-- cart -->
                         <a href="cart.html" class="d-flex align-items-center mb-4 d-md-none text-dark text-decoration-none fw-bold fs-5">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart-fill me-1" viewBox="0 0 16 16">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-cart-fill me-1" viewBox="0 0 16 16">
                                 <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
                             </svg>
                             <span>Cart</span>
                         </a>
-                        <!-- homepage -->
+                        <!-- home button -->
                         <a href="index.html" class="d-flex align-items-center mb-4 text-dark text-decoration-none fw-bold fs-5">
                             <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-house-door-fill me-1" viewBox="0 0 16 16">
                                 <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"/>
@@ -115,14 +114,13 @@
                             </svg>
                             <span>Peripherals</span>
                         </a>
-                        <!-- about -->
+
                         <a href="about.html" class="d-flex align-items-center mb-4 text-dark text-decoration-none fw-bold fs-5">
                             <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-people-fill me-1" viewBox="0 0 16 16">
                                 <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
                             </svg>
                             <span>About Us</span>
                         </a>
-                        <!-- contact -->
                         <a href="contact.html" class="d-flex align-items-center mb-4 text-dark text-decoration-none fw-bold fs-5">
                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-person-circle me-1" viewBox="0 0 16 16">
                                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
@@ -130,7 +128,6 @@
                             </svg>
                             <span>Contact Us</span>
                         </a>
-                        <!-- logout button -->
                         <a href="#" onclick="logout()" class="d-block text-dark text-decoration-none fw-bold fs-5">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-door-closed-fill" viewBox="0 0 16 16">
                                 <path d="M12 1a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2a1 1 0 0 1 1-1zm-2 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
